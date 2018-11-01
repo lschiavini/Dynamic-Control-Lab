@@ -5,7 +5,7 @@ import csv
 from sklearn import linear_model
 from scipy.ndimage.filters import gaussian_filter
 
-filename = 'dados.csv'
+filename = 'dados1.csv'
 delta_n = -0.02695
 delta_p = 0.5449
 #CUT = 750

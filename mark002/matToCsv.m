@@ -1,6 +1,6 @@
 function matToCsv
-    load('amp2freq05A2.mat');
+    load('./dados/amp2freq05A1.mat');
     dados = dados';
-    csvwrite('dados.csv', dados);
-    pause();
+    csvwrite('dados1.csv', dados);
+    %pause();
 end
