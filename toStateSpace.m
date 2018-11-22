@@ -1,8 +1,11 @@
 function [A,B,C,D,Ac,L,K,Kx,Ki] = toStateSpace(num, denum)
     K = 0;
+    %Polos Controlador
+    %  5 Vezes no mínimo mais lentos que o observador
     polo1 = -40;
     polo2 = -30;
-    
+    %Polos Observador
+    %  devem ser mais rápidos que o controlador
     polo3 = -10;
     polo4 = -20;
     polo5 = -12;
