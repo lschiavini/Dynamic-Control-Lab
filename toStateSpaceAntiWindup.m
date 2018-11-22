@@ -1,14 +1,14 @@
-function [A,B,C,D,Ac,L,K,Kx,Ki] = toStateSpace(num, denum)
+function [A,B,C,D,Ac,L,K,Kx,Ki] = toStateSpaceAntiWindup(num, denum)
     K = 0;
     %Polos Controlador
     %  5 Vezes no mínimo mais lentos que o observador
-    polo3 = -2;
-    polo4 = -3;
-    polo5 = -1;
+    polo3 = -30;
+    polo4 = -40;
+    polo5 = -20;
     %Polos Observador
     %  devem ser mais rápidos que o controlador
-    polo1 = -150;
-    polo2 = -100;
+    polo1 = -200;
+    polo2 = -170;
     
     [A, B, C, D] = tf2ss(num, denum);
     
@@ -23,7 +23,7 @@ function [A,B,C,D,Ac,L,K,Kx,Ki] = toStateSpace(num, denum)
     L = acker(A', C', [polo1, polo2])';
     
     %% Save
-    save stateSpaceData.mat;
+    save stateSpaceDataAntiWindup.mat;
     
 end
 
